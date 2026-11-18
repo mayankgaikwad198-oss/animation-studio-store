@@ -1,1 +1,380 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#0a1020">
+<meta name="description" content="Animation Studio is a Claude skill with 10 animation style modules and a guided workflow for planning animated videos. ">
+<title>Animation Studio — 10 Styles. One Creative Workflow.</title>
+<style>
+:root{--bg:#0a1020;--panel:#111a2d;--panel2:#17233a;--cream:#f2f5ff;--muted:#a5afc4;--line:#293650;--orange:#8b9cff;--orange2:#a9b6ff;--green:#70ddc4;--max:1160px}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--cream);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.55}a{color:inherit;text-decoration:none}button{font:inherit}.wrap{width:min(var(--max),calc(100% - 40px));margin:auto}.nav{height:76px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line)}.brand{font-weight:750;letter-spacing:-.04em;font-size:19px}.brand span{color:var(--orange)}.navlinks{display:flex;gap:26px;color:#c0c9dc;font-size:13px}.navlinks a:hover{color:var(--orange2)}.nav-cta,.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;border:1px solid var(--orange);background:var(--orange);color:#1a1511;padding:12px 18px;border-radius:7px;font-weight:750;font-size:14px;cursor:pointer;transition:.2s}.nav-cta:hover,.btn:hover{background:var(--orange2);transform:translateY(-2px)}.btn.secondary{background:transparent;color:var(--cream);border-color:#53617d}.eyebrow{color:var(--orange2);font-size:11px;font-weight:800;letter-spacing:.17em;text-transform:uppercase}.hero{padding:88px 0 78px;display:grid;grid-template-columns:1.02fr .98fr;gap:60px;align-items:center}.hero h1{font-family:Georgia,serif;font-size:clamp(48px,6vw,78px);line-height:.99;letter-spacing:-.055em;font-weight:500;margin:18px 0 22px}.hero h1 em{color:var(--orange);font-weight:400}.lead{font-size:17px;color:#b7c1d5;max-width:580px}.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin:28px 0}.micro{color:#8f9bb3;font-size:12px}.hero-art{position:relative;min-height:440px;border:1px solid #40527a;border-radius:12px;background:radial-gradient(ellipse at 50% 42%,#25345e 0,#182441 40%,#0d1528 76%);overflow:hidden;padding:24px;display:flex;align-items:center;justify-content:center}.hero-art:before,.hero-art:after{content:"";position:absolute;border:1px solid #6579d855;border-radius:50%;width:360px;height:360px}.hero-art:after{width:470px;height:470px}.orbit-label{position:absolute;z-index:2;background:#101a30;border:1px solid #40527a;border-radius:30px;padding:8px 12px;font-size:11px;color:#cbd5ff}.orbit-label.one{top:14%;left:8%}.orbit-label.two{right:7%;top:30%}.orbit-label.three{bottom:13%;left:15%}.orbit-label.four{bottom:18%;right:9%}.core{z-index:1;width:220px;height:260px;border:1px solid #8b9cff;border-radius:8px;background:linear-gradient(145deg,#1a2b4d,#0c1426);box-shadow:0 25px 80px #0009;display:flex;flex-direction:column;justify-content:space-between;padding:20px;transform:rotate(-5deg)}.core small{color:var(--orange2);letter-spacing:.18em;font-size:9px}.core strong{font-family:Georgia,serif;font-size:32px;line-height:1.02;font-weight:400}.core .bars{display:flex;gap:5px;align-items:end;height:50px}.core .bars i{display:block;width:14%;background:var(--orange);border-radius:3px 3px 0 0}.core .bars i:nth-child(1){height:35%}.core .bars i:nth-child(2){height:75%}.core .bars i:nth-child(3){height:50%}.core .bars i:nth-child(4){height:100%}.core .bars i:nth-child(5){height:65%}.core .bars i:nth-child(6){height:85%}.stats{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:22px 0}.stat{text-align:center;border-right:1px solid var(--line)}.stat:last-child{border:0}.stat b{display:block;font:34px Georgia,serif;color:var(--orange2)}.stat span{font-size:12px;color:var(--muted)}section{padding:82px 0}.section-head{display:flex;justify-content:space-between;align-items:end;gap:30px;margin-bottom:32px}.section-head h2{font:500 clamp(34px,4vw,50px)/1.05 Georgia,serif;letter-spacing:-.04em;margin:9px 0 0}.section-head p{color:var(--muted);max-width:430px;margin:0}.product-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}.feature{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:26px}.feature .num{color:var(--orange);font:28px Georgia,serif}.feature h3{margin:12px 0 7px;font-size:18px}.feature p{margin:0;color:var(--muted);font-size:14px}.price-panel{background:#172642;border:1px solid #536bb2;border-radius:12px;padding:28px;display:flex;align-items:center;justify-content:space-between;gap:25px;margin-top:18px}.price{font:54px Georgia,serif;color:var(--orange2)}.price small{font:13px system-ui;color:var(--muted)}.styles{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}.style-card{background:var(--panel);border:1px solid var(--line);border-radius:9px;padding:17px;min-height:160px}.style-card .style-no{font:25px Georgia,serif;color:var(--orange)}.style-card h3{font-size:14px;margin:15px 0 6px}.style-card p{font-size:12px;color:var(--muted);margin:0}.note{border-left:2px solid var(--orange);padding:12px 16px;color:#c1cbe0;background:#111a2d;font-size:13px;margin-top:18px}.guide{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}.step{background:var(--panel);border:1px solid var(--line);border-radius:10px;overflow:hidden}.step img{display:block;width:100%;aspect-ratio:9/15;object-fit:cover;object-position:top;background:#222}.step-copy{padding:18px}.step-copy span{color:var(--orange);font-size:11px;font-weight:800;letter-spacing:.12em}.step-copy h3{margin:5px 0;font-size:16px}.step-copy p{margin:0;color:var(--muted);font-size:13px}.prompt-layout{display:grid;grid-template-columns:.8fr 1.2fr;gap:28px;align-items:start}.prompt-points{display:grid;gap:10px}.prompt-point{padding:16px;background:var(--panel);border:1px solid var(--line);border-radius:8px}.prompt-point b{display:block;font-size:14px}.prompt-point span{font-size:12px;color:var(--muted)}.template{background:#111a2d;border:1px solid var(--line);border-radius:10px;padding:22px}.template pre{white-space:pre-wrap;color:#dce4f5;font:13px/1.7 ui-monospace,SFMono-Regular,Menlo,monospace;margin:0}.prompt-actions{display:flex;justify-content:space-between;align-items:center;gap:15px;margin-bottom:15px}.tiny{font-size:11px;color:var(--muted)}.video-wrap{background:#111a2d;border:1px solid var(--line);border-radius:12px;padding:18px}.video-wrap video{width:100%;max-height:680px;display:block;background:#000;border-radius:8px}.drive-embed{width:100%;aspect-ratio:16/9;background:#000;border-radius:8px;overflow:hidden}.drive-embed iframe{display:block;width:100%;height:100%;border:0}.video-meta{display:flex;justify-content:space-between;gap:20px;padding:16px 2px 2px;align-items:center}.video-meta p{margin:4px 0 0;color:var(--muted);font-size:13px}.prompt-full{margin-top:18px;border:1px solid var(--line);border-radius:9px;background:var(--panel);overflow:hidden}.prompt-full summary{padding:17px 20px;cursor:pointer;font-weight:700}.prompt-full summary::marker{color:var(--orange)}.prompt-full pre{white-space:pre-wrap;overflow-wrap:anywhere;padding:0 20px 20px;margin:0;color:#cbd4e7;font:12px/1.65 ui-monospace,monospace;max-height:700px;overflow:auto}.buy{background:linear-gradient(130deg,#1c2c50,#101a30 70%);border:1px solid #536bb2;border-radius:14px;padding:48px;display:grid;grid-template-columns:1fr auto;align-items:center;gap:25px}.buy h2{font:500 clamp(35px,4vw,52px)/1.05 Georgia,serif;margin:10px 0}.buy p{color:#c2cce0;max-width:600px}.buy-price{text-align:right}.buy-price b{font:60px Georgia,serif;color:var(--orange2);display:block}.buy-price .btn{min-width:180px}.razorpay-form{display:flex;justify-content:flex-end;min-height:44px}.buy-price .tiny{margin-top:10px;display:block}.faq{display:grid;grid-template-columns:1fr 1fr;gap:12px}.faq details{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:17px}.faq summary{cursor:pointer;font-weight:650;font-size:14px}.faq p{font-size:13px;color:var(--muted);margin-bottom:0}.footer{border-top:1px solid var(--line);padding:28px 0;color:#8f9bb3;font-size:12px;display:flex;justify-content:space-between;gap:20px}.pill{display:inline-block;border:1px solid #536bb2;border-radius:30px;padding:5px 9px;color:#b5c0ff;font-size:10px;letter-spacing:.1em;text-transform:uppercase}
+@media(max-width:850px){.navlinks{display:none}.hero{grid-template-columns:1fr;padding:58px 0;gap:30px}.hero-art{min-height:340px}.styles{grid-template-columns:repeat(2,1fr)}.prompt-layout{grid-template-columns:1fr}.buy{grid-template-columns:1fr}.buy-price{text-align:left}.product-grid{grid-template-columns:1fr}.section-head{display:block}.section-head p{margin-top:14px}.price-panel{align-items:flex-start;flex-direction:column}}@media(max-width:560px){.wrap{width:min(100% - 28px,var(--max))}.nav{height:64px}.nav-cta{padding:9px 12px;font-size:12px}.hero h1{font-size:53px}.lead{font-size:15px}.hero-art{min-height:300px}.core{width:185px;height:225px}.core strong{font-size:27px}.stats{padding:16px 0}.stat b{font-size:26px}.stat span{font-size:10px}.styles{gap:8px}.style-card{padding:13px;min-height:150px}.guide{grid-template-columns:1fr 1fr;gap:9px}.step-copy{padding:12px}.step-copy h3{font-size:13px}.step-copy p{font-size:11px}.step img{aspect-ratio:9/14}.buy{padding:26px}.buy-price b{font-size:50px}.faq{grid-template-columns:1fr}.video-meta{display:block}.video-meta .pill{margin-top:10px}.footer{display:block}.footer span{display:block;margin-top:8px}section{padding:60px 0}}
+</style>
+</head>
+<body>
+<header class="wrap nav"><a class="brand" href="#top">ANIMATION<span>STUDIO</span></a><nav class="navlinks"><a href="#included">What's included</a><a href="#styles">10 styles</a><a href="#install">Installation</a><a href="#showcase">Showcase</a></nav><a class="nav-cta" href="#purchase">Get started <span>↗</span></a></header>
+<main id="top">
+<div class="wrap hero"><div><div class="eyebrow">A Claude skill · 10 style modules</div><h1>Turn ideas into <em>animated</em> stories.</h1><p class="lead">Animation Studio is a structured animation workflow for Claude. Choose a visual direction, develop your scenes, and guide the production process with one skill and ten style modules.</p><div class="hero-actions"><a class="btn" href="#included">Explore the skill <span>↓</span></a><a class="btn secondary" href="#showcase">Watch the example</a></div><div class="micro">Digital skill package · 10 style modules · Illustrated setup walkthrough</div></div>
+<div class="hero-art"><span class="orbit-label one">PIXEL ART</span><span class="orbit-label two">CGI MOTION</span><span class="orbit-label three">COMIC ART</span><span class="orbit-label four">ZACKD FILMS</span><div class="core"><small>CLAUDE WEB SKILL / V1</small><strong>ANIMATION<br>STUDIO</strong><div class="bars"><i></i><i></i><i></i><i></i><i></i><i></i></div><small>10 STYLE MODULES · ONE WORKFLOW</small></div></div></div>
+<div class="wrap stats"><div class="stat"><b>10</b><span>Animation style modules</span></div><div class="stat"><b>1</b><span>Claude web skill</span></div><div class="stat"><b>1</b><span>Setup walkthrough</span></div></div>
+<section id="included" class="wrap"><div class="section-head"><div><div class="eyebrow">01 / Product overview</div><h2>What you get.</h2></div><p>A downloadable Claude skill package designed to organize animation requests into a more deliberate, repeatable workflow.</p></div><div class="product-grid"><article class="feature"><div class="num">01</div><h3>One installable Claude skill</h3><p>A ZIP package containing the Animation Studio skill and its supporting files. The skill appears in your Claude workspace after a successful upload.</p></article><article class="feature"><div class="num">02</div><h3>Ten visual style modules</h3><p>Ten distinct visual directions to help shape the look and feel of an animation project, from pixel art to CGI motion.</p></article><article class="feature"><div class="num">03</div><h3>Structured production guidance</h3><p>Use the skill to organize scripts, scene direction, visual consistency, movement, captions, sound and delivery requirements.</p></article><article class="feature"><div class="num">04</div><h3>Installation and usage walkthrough</h3><p>Follow the illustrated Claude setup guide, then invoke the skill and provide a clear production brief.</p></article></div><div class="note"><b>What this is:</b> a skill that guides Claude's animation workflow. It is not a standalone animation editor, rendering engine, or guarantee that every Claude account can export a finished video. Actual output depends on the tools and capabilities available in your environment.</div></section>
+<section id="styles" class="wrap"><div class="section-head"><div><div class="eyebrow">02 / The style library</div><h2>Ten ways to tell a story.</h2></div><p>Choose a visual language that fits the subject. The exact result still depends on the brief, references and tools used during production.</p></div><div class="styles">
+<div class="style-card"><div class="style-no">01</div><h3>Pixel Art</h3><p>Retro pixel-based scenes, characters and environments.</p></div><div class="style-card"><div class="style-no">02</div><h3>Chalkboard</h3><p>Hand-drawn, classroom-inspired diagrams and storytelling.</p></div><div class="style-card"><div class="style-no">03</div><h3>Glow Sketch</h3><p>Neon-line illustrations and luminous sketch aesthetics.</p></div><div class="style-card"><div class="style-no">04</div><h3>PS2</h3><p>Low-poly, early-console-inspired 3D visual direction.</p></div><div class="style-card"><div class="style-no">05</div><h3>Comic Art</h3><p>Bold outlines, expressive poses and graphic-panel energy.</p></div><div class="style-card"><div class="style-no">06</div><h3>Flat Vector</h3><p>Clean shapes, simplified forms and clear visual explanations.</p></div><div class="style-card"><div class="style-no">07</div><h3>Dan Koe</h3><p>Minimal, editorial-style visual storytelling direction.</p></div><div class="style-card"><div class="style-no">08</div><h3>CGI Motion</h3><p>Polished computer-generated imagery and motion-led scenes.</p></div><div class="style-card"><div class="style-no">09</div><h3>Lego</h3><p>Brick-built characters, props and miniature environments.</p></div><div class="style-card"><div class="style-no">10</div><h3>ZackD Films</h3><p>Fast, explanatory 3D-style visual storytelling direction.</p></div></div><div class="note">Style names describe the modules included in the package. They are not endorsements or claims of affiliation with any creator, studio or brand.</div></section>
+<section id="install" class="wrap"><div class="section-head"><div><div class="eyebrow">03 / Setup walkthrough</div><h2>Install it in Claude.</h2></div><p>These steps follow the Claude interface shown in the supplied screenshots. Menu labels and availability may vary as Claude updates its interface.</p></div><div class="guide">
+<article class="step"><img src="assets/1.heic" alt="Claude interface with the sidebar control highlighted"><div class="step-copy"><span>STEP 01</span><h3>Open the Claude sidebar</h3><p>Tap the sidebar/menu icon in Claude to open the workspace navigation.</p></div></article>
+<article class="step"><img src="assets/2.heic" alt="Claude navigation menu showing Customize"><div class="step-copy"><span>STEP 02</span><h3>Open Customize</h3><p>From the navigation menu, select <b>Customize</b>.</p></div></article>
+<article class="step"><img src="assets/3.heic" alt="Customize page with Skills tab selected"><div class="step-copy"><span>STEP 03</span><h3>Choose Skills</h3><p>Open the <b>Skills</b> tab. Switch to the area where your workspace skills are managed.</p></div></article>
+<article class="step"><img src="assets/4.heic" alt="Add menu showing Upload skill"><div class="step-copy"><span>STEP 04</span><h3>Select Upload skill</h3><p>Tap <b>Add</b>, then choose <b>Upload skill</b> from the menu.</p></div></article>
+<article class="step"><img src="assets/5.heic" alt="iPhone Files picker with the Animation Studio skill ZIP selected"><div class="step-copy"><span>STEP 05</span><h3>Select the skill ZIP</h3><p>Find the Animation Studio ZIP file in Files and select it. Keep the ZIP intact; do not extract it unless the current Claude upload instructions ask you to.</p></div></article>
+<article class="step"><img src="assets/6.jpg" alt="Claude Upload a skill screen showing the selected ZIP and preview"><div class="step-copy"><span>STEP 06</span><h3>Review and upload</h3><p>Check that the preview identifies <b>animation-studio</b>, then complete the upload.</p></div></article>
+<article class="step"><img src="assets/7.jpg" alt="Animation Studio skill installed and enabled in Claude"><div class="step-copy"><span>STEP 07</span><h3>Confirm the skill is enabled</h3><p>Look for <b>animation-studio</b> in your skills list and make sure its toggle is on.</p></div></article>
+<article class="step"><img src="assets/8.jpg" alt="Claude prompt field with animation-studio skill command"><div class="step-copy"><span>STEP 08</span><h3>Invoke the skill</h3><p>In a Claude chat, type <code>/animation-studio</code> and select the skill if Claude offers it.</p></div></article>
+<article class="step"><img src="assets/9.jpg" alt="Claude chat with an animation production prompt entered"><div class="step-copy"><span>STEP 09</span><h3>Describe the animation you want</h3><p>Give Claude your topic, script, audio, target format, visual style and production requirements. Attach reference files when relevant.</p></div></article>
+</div><div class="note"><b>Compatibility note:</b> Claude's skill upload and skill availability can depend on the account, plan, workspace settings and current product interface. Check Claude's current in-product instructions if your menus differ from these screenshots.</div></section>
+<section id="prompt-guide" class="wrap"><div class="section-head"><div><div class="eyebrow">04 / Prompt writing</div><h2>Give the skill a usable brief.</h2></div><p>A vague request produces vague direction. A useful animation prompt defines the story, assets, visual rules, timing and what counts as a finished deliverable.</p></div><div class="prompt-layout"><div class="prompt-points"><div class="prompt-point"><b>1. Objective and audience</b><span>What are you making, for whom, and on which platforms?</span></div><div class="prompt-point"><b>2. Inputs and source of truth</b><span>Attach the final script, voiceover, references and any constraints. Say which input controls timing.</span></div><div class="prompt-point"><b>3. Technical specifications</b><span>Aspect ratio, resolution, frame rate, file type and duration.</span></div><div class="prompt-point"><b>4. Visual identity</b><span>Art style, palette, character consistency and things the system must avoid.</span></div><div class="prompt-point"><b>5. Scene direction</b><span>Break the narration into scenes and explain the action, composition and transitions.</span></div><div class="prompt-point"><b>6. Audio and captions</b><span>Specify narration handling, subtitle accuracy, music, sound effects and audio hierarchy.</span></div><div class="prompt-point"><b>7. Quality control and delivery</b><span>Define review checks and demand an honest statement of what can actually be exported.</span></div></div><div class="template"><div class="prompt-actions"><div><b>Copy-ready prompt framework</b><div class="tiny">Replace the bracketed details before sending.</div></div><button class="btn" onclick="copyText('promptTemplate')">Copy framework</button></div><pre id="promptTemplate">PROJECT: [VIDEO TITLE]
+OBJECTIVE: Create a complete animated video about [TOPIC] for [AUDIENCE].
+
+INPUTS PROVIDED:
+- Final script: [ATTACHED / PASTE BELOW]
+- Voiceover: [ATTACHED AUDIO / NOT PROVIDED]
+- Visual references: [ATTACHED FILES]
+SOURCE OF TRUTH: Use [AUDIO / SCRIPT] for timing and wording. Do not invent missing content.
+
+VIDEO SPECIFICATIONS:
+- Platform and aspect ratio: [e.g. Reels / 9:16]
+- Resolution: [e.g. 1080 × 1920]
+- Frame rate: [e.g. 30 FPS]
+- Export format: [e.g. MP4]
+- Duration: [match supplied voiceover]
+
+VISUAL DIRECTION:
+- Style: [choose one of the 10 modules]
+- Palette and character rules: [DETAILS]
+- Must include: [DETAILS]
+- Must avoid: [DETAILS]
+
+SCENE PLAN:
+For each narration beat, specify the visual action, camera composition, movement, transition and approximate timing. Keep scenes consistent and purposeful.
+
+CAPTIONS & AUDIO:
+Use accurate, synchronized captions. Define typography and highlighted terms. Keep supplied narration primary; specify music mood, sound effects and mixing priorities.
+
+QUALITY CONTROL:
+Check continuity, motion, timing, captions, audio balance, visual errors and export settings. Do not claim a finished render if the environment cannot create one.
+
+FINAL DELIVERABLE:
+[Describe the exact file(s) you expect. If a complete render is not possible, state the limitation and provide the most useful production-ready output.]</pre></div></div></section>
+<section id="showcase" class="wrap"><div class="section-head"><div><div class="eyebrow">05 / Example production brief</div><h2>From prompt to animated story.</h2></div><p>This is the Galloping Gertie example: a historical animated explainer brief with scene direction, captions, sound design, music, editing and quality checks.</p></div><div class="video-wrap"><div class="drive-embed"><iframe src="https://drive.google.com/file/d/1sCwvYp0ksyRm_kOlpM3FfKdv4-y1tIB5/preview" title="Galloping Gertie animation example" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen loading="lazy"></iframe></div><div class="video-meta"><div><b>Galloping Gertie — Animated Storytelling Example</b><p>Supplied example video · 1 minute 18 seconds</p></div><span class="pill">Video showcase</span></div></div><div class="note"><b>Prompt attribution:</b> The Galloping Gertie master production prompt displayed below was written using ChatGPT. The video above is the supplied output example. It demonstrates one production result, not a guarantee that every user will get identical results.</div>
+<details class="prompt-full"><summary>Read the full Galloping Gertie master production prompt</summary><div class="prompt-actions" style="padding:0 20px"><span class="tiny">Original prompt supplied for this website</span><button class="btn secondary" onclick="copyText('gertiePrompt')">Copy full prompt</button></div><pre id="gertiePrompt"># MASTER PRODUCTION PROMPT
+## GALLOPING GERTIE — PROFESSIONAL 2D ANIMATED STORYTELLING SHORT
+
+I am providing you with a completed voiceover audio file and its corresponding script.
+
+Your task is to create a complete, professionally edited, highly engaging 2D animated storytelling video using the supplied audio.
+
+This is intended for YouTube Shorts, Instagram Reels and TikTok.
+
+I do NOT want a basic slideshow, static illustrations with zoom effects, or a collection of unrelated AI-generated clips.
+
+I want a visually engaging animated story with smooth animation, expressive visuals, professional captions, cinematic background music, carefully synchronized sound effects and excellent editing.
+
+The final result should feel like a professionally produced animated documentary compressed into a short-form video.
+
+Follow every instruction below.
+
+---
+
+# 1. VIDEO SPECIFICATIONS
+
+- Format: Vertical 9:16.
+- Resolution: 1080 × 1920.
+- Frame rate: 30 FPS.
+- Export format: MP4.
+- Video duration: Match the complete supplied voiceover audio exactly.
+- Platform: YouTube Shorts, Instagram Reels and TikTok.
+- Maintain appropriate mobile-safe margins for captions and important visual elements.
+
+IMPORTANT:
+The voiceover determines the duration of the video.
+
+Do not shorten, remove, rewrite or cut off any part of the narration to fit a preferred video length.
+
+The final video must include the complete voiceover from beginning to end.
+
+---
+
+# 2. VISUAL STYLE — FOLLOW STRICTLY
+
+Use a clean, professional 2D animated storytelling style inspired by educational animated story videos.
+
+The visual direction should include:
+- Clean cartoon illustrations.
+- Bold and consistent outlines.
+- Flat colours with subtle shading.
+- Expressive characters.
+- Detailed but uncluttered environments.
+- Smooth character and object movement.
+- Consistent proportions and visual design.
+- Interesting camera compositions.
+- Carefully animated environmental details.
+
+DO NOT USE:
+- Photorealistic 3D animation.
+- Anime aesthetics.
+- Zombie or horror aesthetics.
+- Random stock footage.
+- Unrelated AI-generated video clips.
+- Static images with only zoom effects.
+- Excessive transitions.
+- Unnecessary cinematic effects that distract from the story.
+
+Maintain the same illustration style, colour palette, character designs and overall visual identity throughout the entire video.
+
+---
+
+# 3. COMPLETE VOICEOVER SCRIPT
+
+Use the supplied audio as the authoritative source for timing, pronunciation, pauses and delivery. Use the written script to understand the story and plan the corresponding scenes and captions. Do not rewrite or shorten it.
+
+[ curious ] This bridge started dancing in winds as light as four miles per hour.
+
+[ slight pause ]
+
+[ storytelling ] In 1940, a brand-new suspension bridge opened in Washington, USA.
+
+People called it... Galloping Gertie.
+
+And you'll understand why.
+
+[ playful curiosity ] Whenever the wind blew, the entire roadway began bouncing up and down.
+
+Cars literally moved like they were riding waves.
+
+[ serious ] Engineers knew something was wrong.
+
+They installed hydraulic shock absorbers and additional cables to control the movement.
+
+But the problem wasn't solved.
+
+[ dramatic ] Then, on November seventh, 1940... everything changed.
+
+The bridge suddenly began twisting violently from side to side.
+
+[ slower, tense ] The roadway tilted almost forty-five degrees.
+
+Steel beams twisted. Concrete broke apart.
+
+And the entire structure began tearing itself apart.
+
+[ short pause ]
+
+[ serious ] Just four months after opening, Galloping Gertie collapsed into the water.
+
+[ thoughtful ] But here's the fascinating part.
+
+The wind wasn't simply pushing the bridge.
+
+Its flexible structure and the airflow interacted, creating a destructive twisting motion known as torsional flutter.
+
+[ confident ] The disaster changed how engineers studied wind and designed suspension bridges.
+
+[ slight pause ]
+
+[ emphatic ] Because sometimes... the greatest threat to a massive structure is something you can't even see.
+
+[ softly ] The wind.
+
+IMPORTANT: The supplied voiceover audio takes priority over the written script if there are any differences in timing or delivery. Do not generate a replacement voice. Do not add narration that is not present in the supplied audio.
+
+---
+
+# 4. SCENE-BY-SCENE ANIMATION DIRECTION
+
+Use the actual voiceover to determine scene timing. These are creative directions. Adjust the scene lengths to match the narration naturally.
+
+## SCENE 1 — THE HOOK
+Narration: "This bridge started dancing in winds as light as four miles per hour."
+Visuals: Start immediately with the bridge twisting dramatically. Show the suspension bridge moving violently; make the roadway visibly twist from side to side; show vehicles struggling to remain on the roadway; add moving water underneath; show wind affecting the environment; use a dramatic camera push-in towards the bridge.
+Editing: Open with immediate visual action. Add a subtle cinematic impact. Use a short, powerful wind sound. Make the first second visually surprising. Do not start with a logo, title screen or slow introduction.
+
+## SCENE 2 — THE INTRODUCTION
+Narration: "In 1940, a brand-new suspension bridge opened in Washington, USA."
+Visuals: Reveal the full suspension bridge stretching across the water; establish the historical 1940 setting; show period-appropriate vehicles travelling across the bridge; use a wide establishing shot followed by a closer tracking shot. Add a small, tasteful date label: "1940".
+
+## SCENE 3 — GALLOPING GERTIE
+Narration: "People called it... Galloping Gertie. And you'll understand why."
+Visuals: Show the bridge bouncing vertically; make the roadway visibly rise and fall; show cars moving up and down with the roadway; use a side view to make the movement easy to understand; make the animation slightly surprising and memorable. Add a small visual title: "GALLOPING GERTIE".
+
+## SCENE 4 — THE BOUNCING BRIDGE
+Narration: "Whenever the wind blew, the entire roadway began bouncing up and down. Cars literally moved like they were riding waves."
+Visuals: Show gusts of wind passing across the bridge; animate the roadway moving like a wave; show vehicles responding to the movement; use a combination of wide shots and close-ups; make the movement smooth and understandable.
+
+## SCENE 5 — THE ENGINEERS
+Narration: "Engineers knew something was wrong. They installed hydraulic shock absorbers and additional cables to control the movement. But the problem wasn't solved."
+Visuals: Introduce engineers examining the bridge; show inspection of structural components; show hydraulic shock absorbers being installed; show additional cables being attached; use close-ups of tools, mechanical components and cables; show the bridge continuing to move despite these efforts. The engineering details should look coherent and period-appropriate.
+
+## SCENE 6 — THE DAY EVERYTHING CHANGED
+Narration: "Then, on November seventh, 1940... everything changed."
+Visuals: Introduce a date label: "NOVEMBER 7, 1940"; gradually darken the atmosphere without making it horror-themed; show the bridge beginning to move unpredictably; build tension through camera movement and sound design.
+
+## SCENE 7 — THE TWISTING
+Narration: "The bridge suddenly began twisting violently from side to side."
+Visuals: Show the bridge twisting along its length; use a wide angle to show the entire structure; follow with close-ups of the roadway and suspension components; make the movement progressively more violent; show cables becoming visibly strained. The audience must clearly understand that the bridge is twisting, not simply bouncing.
+
+## SCENE 8 — THE COLLAPSE
+Narration: "The roadway tilted almost forty-five degrees. Steel beams twisted. Concrete broke apart. And the entire structure began tearing itself apart."
+Visuals: Show the roadway tilting dramatically; depict the approximate forty-five-degree angle described in the narration; show structural components bending and breaking; animate falling debris; show the bridge structure progressively failing; use dramatic camera angles and controlled camera shake; show debris falling into the water. This should be the visual climax. Do not make the collapse look cartoonishly funny.
+
+## SCENE 9 — THE AFTERMATH
+Narration: "Just four months after opening, Galloping Gertie collapsed into the water."
+Visuals: Show the damaged bridge structure; show debris in the water; use a wide shot to establish the scale of the destruction; let the camera move slowly through the aftermath. Allow the narration to carry the emotional weight.
+
+## SCENE 10 — THE SCIENTIFIC EXPLANATION
+Narration: "But here's the fascinating part. The wind wasn't simply pushing the bridge. Its flexible structure and the airflow interacted, creating a destructive twisting motion known as torsional flutter."
+Visuals: Transition from the damaged bridge to a clean educational diagram; show wind flowing around the bridge; use directional arrows to represent airflow; show the bridge structure responding to the airflow; visually demonstrate the twisting movement; use a simple comparison between vertical bouncing and twisting motion; highlight the term "TORSIONAL FLUTTER". Make the scientific explanation visually simple enough for someone with no engineering background to understand. Do not overload the screen with technical diagrams.
+
+## SCENE 11 — THE LESSON
+Narration: "The disaster changed how engineers studied wind and designed suspension bridges."
+Visuals: Show engineers studying bridge designs; show simplified engineering diagrams; transition to a modern suspension bridge; use a subtle visual comparison between the old and modern engineering approaches. Keep this section informative and visually satisfying.
+
+## SCENE 12 — THE FINAL PAYOFF
+Narration: "Because sometimes... the greatest threat to a massive structure is something you can't even see. The wind."
+Visuals: Show the bridge or its remains in a wide cinematic composition; show wind moving across the water; slowly reveal the invisible force through subtle animated airflow lines; finish on a memorable image that reinforces the final words. The final visual should land exactly with the last spoken word. Do not add a long outro, unnecessary logo animation or additional narration.
+
+---
+
+# 5. ANIMATION QUALITY AND MOVEMENT
+
+The animation must feel alive. Pay special attention to smooth bridge movement; believable suspension cable movement; moving vehicles; wind affecting the environment; animated water; natural character movement; expressive character reactions; falling debris; structural bending and breaking; smooth camera pans and tracking shots; dynamic close-ups and wide shots; natural transitions between scenes.
+
+Avoid repetitive camera angles. Avoid reusing the same animation repeatedly. Do not use static images as a substitute for actual movement. Where full character animation is not necessary, use meaningful environmental animation, camera movement and object movement. Every scene should have a clear visual purpose.
+
+---
+
+# 6. CAPTIONS AND HIGHLIGHTED KEYWORDS
+
+Generate accurate English subtitles synchronized to the actual voiceover.
+
+Visual style: bold, modern typography; white primary text; bright yellow or electric-orange highlights; clean, professional appearance; subtle pop-in animations; consistent positioning; high readability on mobile screens.
+
+Highlight important words when they are spoken. Examples: FOUR MILES PER HOUR; 1940; GALLOPING GERTIE; BOUNCING; ENGINEERS; NOVEMBER 7TH; TWISTING; FORTY-FIVE DEGREES; COLLAPSED; TORSIONAL FLUTTER; THE WIND.
+
+Caption rules: Do not highlight every word. Highlight only meaningful words and phrases. Use word-by-word emphasis selectively. Break longer sentences into readable chunks. Never display too much text at once. Do not cover important characters or animation. Keep captions within mobile-safe margins. Match every caption to the actual spoken audio. Proofread all captions. Make the captions feel professionally edited into the video, not like basic automatically generated subtitles.
+
+---
+
+# 7. BACKGROUND MUSIC
+
+Select a suitable cinematic background track that creates curiosity and maintains audience interest.
+
+Opening: mysterious, curious and slightly suspenseful.
+Introduction: subtle storytelling music that establishes the atmosphere.
+Bridge movement: gradually introduce tension.
+Engineers: keep the music controlled and curious.
+Collapse: build into a dramatic cinematic moment.
+Scientific explanation: reduce the intensity and create room for the narration.
+Ending: finish with a thoughtful, slightly mysterious atmosphere.
+
+Music requirements: use royalty-free or properly licensed music; avoid generic corporate music; avoid overly cheerful music; avoid music that competes with the narration; use smooth volume automation; lower the music beneath important narration; make transitions between musical sections natural. The music should support the story, not become the main attraction.
+
+---
+
+# 8. SOUND EFFECTS
+
+Add professional sound effects synchronized with the animation.
+
+Opening: strong wind gust; low cinematic impact; subtle structural creaking.
+Bridge movement: metal groaning; cable tension; wind blowing; subtle vehicle movement.
+Engineers: mechanical clicks; tool sounds; metal installation sounds.
+Twisting: increasing structural creaking; metal bending; cable strain; wind intensifying.
+Collapse: metal cracking; structural impacts; falling debris; deep cinematic impact; large water splashes.
+Scientific explanation: soft airflow; subtle whooshes for diagrams; light mechanical sounds.
+Ending: gentle wind ambience; subtle cinematic finish.
+
+Do not use sound effects randomly. Every sound should have a corresponding visual action or storytelling purpose. Avoid excessive sound effects.
+
+---
+
+# 9. VOICEOVER AND AUDIO MIXING
+
+The supplied voiceover must remain the primary audio element. Do not replace the voice. Do not rewrite the narration. Do not artificially speed up the voice.
+
+You may use subtle professional audio processing if needed, such as gentle equalization, light compression, noise reduction if necessary, consistent loudness and smooth audio transitions.
+
+Preserve the natural character of the narrator's voice. Match the visual intensity to the narration: curious narration = interesting visual reveals; storytelling narration = smooth chronological animation; serious narration = controlled and informative visuals; dramatic narration = stronger animation and sound effects; thoughtful narration = slower, cleaner visual pacing; final narration = memorable visual payoff.
+
+Keep background music and sound effects below the voiceover. Use audio ducking wherever necessary. The narration must always remain easy to understand.
+
+---
+
+# 10. EDITING AND AUDIENCE RETENTION
+
+The first two seconds are extremely important. The opening must immediately give viewers a reason to stop scrolling.
+
+Use immediate visual action; strong opening composition; fast but controlled editing; frequent meaningful visual changes; interesting camera angles; visual reveals; suspenseful pauses; dramatic escalation; a satisfying ending.
+
+Avoid long empty shots; unnecessary introductions; repetitive visuals; random transitions; unnecessary text; overused camera shake; excessive zooming; effects that distract from the story.
+
+Every scene should introduce information, create curiosity, increase tension, explain something or deliver a payoff. Do not sacrifice clarity for speed.
+
+---
+
+# 11. HISTORICAL AND VISUAL CONSISTENCY
+
+This story is about the 1940 Tacoma Narrows Bridge collapse, also known as Galloping Gertie.
+
+Maintain consistency in bridge architecture; suspension cables; roadway structure; historical vehicles; engineering equipment; clothing and character designs; environmental details; overall colour palette.
+
+Do not randomly change the bridge's appearance between scenes. Do not invent historical events and present them as real. Keep the scientific explanation of torsional flutter visually understandable without making it misleading.
+
+---
+
+# 12. FINAL QUALITY CONTROL
+
+Before exporting, review the entire video from beginning to end.
+
+Animation: Is the art style consistent? Are movements smooth? Does the bridge behave consistently? Are scenes visually engaging? Are there any AI-generated visual glitches?
+
+Voiceover: Is the entire audio included? Is the timing correct? Is the voice clear? Are pauses respected?
+
+Captions: Are all words accurate? Are captions synchronized? Are important words highlighted? Are captions readable on a phone? Are any captions covering important visuals?
+
+Audio: Does the music suit the story? Are sound effects synchronized? Is the narration always clear? Are audio transitions smooth?
+
+Editing: Does the opening grab attention? Does the tension build naturally? Is the collapse dramatic? Is the scientific explanation understandable? Does the ending feel complete?
+
+Fix every obvious error before exporting.
+
+---
+
+# 13. FINAL DELIVERABLE
+
+I want the actual finished animated video.
+
+Not just a storyboard, a script, a list of prompts, a collection of images, or an unfinished timeline.
+
+Deliver the complete edited video with: 2D animation; original supplied voiceover; synchronized captions; highlighted important words; suitable background music; professional sound effects; smooth editing and transitions; vertical 9:16 formatting; high-quality MP4 export.
+
+If your current environment cannot create or export the complete video, tell me exactly what you can produce and what requires another tool. Do not pretend that a storyboard, images or an unfinished timeline is a completed video.
+
+---
+
+# FINAL CREATIVE DIRECTION
+
+I want this video to be genuinely engaging. It should look like a high-quality animated storytelling channel, not a cheap AI-generated compilation.
+
+The animation must be smooth and visually consistent. The captions must be professionally designed. The music must create curiosity. The sound effects must make the events feel alive. The voiceover must control the pacing. The first few seconds must capture attention, the middle must keep viewers curious, the collapse must deliver a dramatic payoff, and the ending must leave viewers with something memorable.
+
+Prioritize storytelling, animation quality, synchronization, visual consistency and professional sound design.
+
+Do not sacrifice quality just to add more effects.
+
+Create the best complete video possible within your actual capabilities.</pre></details></section>
+<section id="purchase" class="wrap"><div class="buy"><div><div class="eyebrow">06 / Get started</div><h2>Build your next animation workflow.</h2><p>Get the Animation Studio Claude skill package, explore all ten style modules and follow the illustrated installation walkthrough.</p><div class="micro">Digital download · One-time payment · Secure Razorpay checkout</div></div><div class="buy-price"><b>₹199</b><form class="razorpay-form"><script src="https://checkout.razorpay.com/v1/payment-button.js" data-payment_button_id="pl_U1o5KjfvS7z6q3" async></script></form><span class="tiny">Secure payment powered by Razorpay.</span></div></div></section>
+<section class="wrap"><div class="section-head"><div><div class="eyebrow">Before you buy</div><h2>Quick answers.</h2></div></div><div class="faq"><details><summary>What exactly am I purchasing?</summary><p>A downloadable Claude skill package called Animation Studio, containing one skill with ten style modules and supporting guidance files.</p></details><details><summary>Does it generate a finished video by itself?</summary><p>No. It guides Claude through an animation workflow. A finished render depends on the tools, model capabilities, assets and export environment available to you.</p></details><details><summary>Do I need Claude?</summary><p>Yes. This product is designed as a Claude web skill. You need access to a Claude workspace that supports skill upload and use.</p></details><details><summary>Are all ten styles included?</summary><p>The package is described as one Animation Studio skill with ten style modules: Pixel Art, Chalkboard, Glow Sketch, PS2, Comic Art, Flat Vector, Dan Koe, CGI Motion, Lego and ZackD Films.</p></details></div></section>
+</main>
+<footer class="wrap footer"><div><b>ANIMATION STUDIO</b><br>One skill. Ten style modules.</div><span>Product page draft · Payment integration pending · © 2026</span></footer>
+<script>
+function copyText(id){const el=document.getElementById(id);if(!el)return;const text=el.innerText;navigator.clipboard.writeText(text).then(()=>{const buttons=[...document.querySelectorAll('button')];const b=buttons.find(x=>x.getAttribute('onclick')===`copyText('${id}')`);if(b){const old=b.innerText;b.innerText='Copied';setTimeout(()=>b.innerText=old,1400)}}).catch(()=>{const r=document.createRange();r.selectNodeContents(el);const s=window.getSelection();s.removeAllRanges();s.addRange(r);});}
+</script>
+</body></html>
 
